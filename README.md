@@ -78,6 +78,7 @@ git pull
 
 - [NoneBot2](https://github.com/nonebot/nonebot2)：本插件实装的开发框架。
 - [go-cqhttp](https://github.com/Mrs4s/go-cqhttp)：稳定完善的 CQHTTP 实现。
+- [nonebot_plugin_xiuxian](https://github.com/s52047qwas/nonebot_plugin_xiuxian)：原版修仙
 
 ## 插件依赖
 
