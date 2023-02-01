@@ -27,11 +27,11 @@ _:tada::tada::tada:修仙模拟器！:tada::tada::tada:_
 - 使用github处拉取源码使用
 无镜像：
 ```
-git clone https://github.com/s52047qwas/nonebot_plugin_xiuxian.git
+git clone https://github.com/QingMuCat/nonebot_plugin_xiuxian
 ```
 镜像：https://ghproxy.com/
 ```
-git clone https://ghproxy.com/https://github.com/s52047qwas/nonebot_plugin_xiuxian.git
+git clone https://ghproxy.com/https://github.com/QingMuCat/nonebot_plugin_xiuxian
 ```
 
 2、下载数据文件
