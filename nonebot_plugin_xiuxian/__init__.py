@@ -142,8 +142,6 @@ async def _(bot: Bot, event: MessageEvent, args: Message = CommandArg()) -> None
             msg = sql_message.create_user(
         user_id, root, root_type, int(power), create_time, user_name, tiny_id
         )
-    else:
-        msg = "xxxxxx"
     if XiuConfig().img:
         pic = await get_msg_pic(msg)
         await run_xiuxian.finish(MessageSegment.image(pic))
