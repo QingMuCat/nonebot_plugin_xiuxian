@@ -4,8 +4,13 @@ import random
 from nonebot.params import CommandArg
 from nonebot.adapters import Message, Bot
 from nonebot.adapters.onebot.v11 import (
-    MessageSegment,
-    GroupMessageEvent
+    Bot,
+    MessageEvent,
+    PRIVATE_FRIEND,
+    GROUP,
+    Message,
+    GroupMessageEvent,
+    MessageSegment
 )
 
 from nonebot_plugin_guild_patch import (
@@ -36,7 +41,7 @@ def get_random_id(dict_data):
     return random.choice(l_temp)
 
 @choujiang.handle()
-async def _(bot: Bot, event: MessageEvent, args: Message = CommandArg()):
+async def _(bot: Bot, event: MessageSegment, args: Message = CommandArg()):
     """抽奖机制"""
     await data_check_conf(bot, event)
 
