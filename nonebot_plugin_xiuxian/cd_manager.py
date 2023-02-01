@@ -1,6 +1,5 @@
 from random import choice
 from typing import Dict, Any
-import snoop
 from nonebot import get_driver
 from nonebot.log import logger
 from nonebot.adapters.onebot.v11 import MessageEvent
@@ -19,7 +18,6 @@ cdmsg = [
     
 ]
 
-@snoop
 def check_cd(event: MessageEvent, cdtype: str) -> int:
     """
     :说明: `check_cd`
@@ -48,8 +46,7 @@ def check_cd(event: MessageEvent, cdtype: str) -> int:
         return 0
     else:
         return cd
-    
-@snoop    
+
 def add_cd(event: MessageEvent, config_time, cdtype, times: int = 1):
     """
     :说明: `add_cd`
@@ -71,8 +68,7 @@ def add_cd(event: MessageEvent, config_time, cdtype, times: int = 1):
     
     cd_data[user_id][cdtype] = event.time + times * config_time
     logger.debug("查询CD: {}".format(cd_data))
-    
-@snoop    
+
 def cd_msg(time_last) -> str:
     """获取CD提示信息"""
     hours, minutes, seconds = 0, 0, 0

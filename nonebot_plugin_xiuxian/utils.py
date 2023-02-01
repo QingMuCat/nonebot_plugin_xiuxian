@@ -13,7 +13,7 @@ import re
 from nonebot_plugin_guild_patch import GuildMessageEvent
 from .data_source import jsondata
 from .xiuxian_config import JsonConfig
-import snoop
+
 def check_user_type(user_id, need_type):
     """
     :说明: `check_user_type`
@@ -47,7 +47,7 @@ def check_user_type(user_id, need_type):
 
     return isType, msg
 
-@snoop()
+
 def check_user(event: MessageEvent):
     """
     判断用户信息是否存在
@@ -71,6 +71,14 @@ def check_user(event: MessageEvent):
         user_info = XiuxianDateManage().get_user_message3(tiny_id)
         if user_info is None:
             msg = "修仙界没有道友的QQ绑定信息，输入【绑定QQ+QQ号码】进行绑定，而后请输入【我要修仙】加入！"
+        else:
+            isUser = True
+            msg = ''
+    else:
+        user_id = event.get_user_id()
+        user_info = XiuxianDateManage().get_user_message2(user_id)
+        if user_info is None:
+            msg = "修仙界没有道友的信息，请输入【我要修仙】加入！"
         else:
             isUser = True
             msg = ''
