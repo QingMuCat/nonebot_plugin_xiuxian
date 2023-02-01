@@ -1,15 +1,16 @@
 from random import choice
 from typing import Dict, Any
-
+import snoop
 from nonebot import get_driver
 from nonebot.log import logger
 from nonebot.adapters.onebot.v11 import MessageEvent
-
+from nonebot_plugin_guild_patch import GuildMessageEvent
+from .xiuxian2_handle import XiuxianDateManage
 
 driver = get_driver()
 cdtype :Dict[str, int] = {}
 cd_data :Dict[str, Any] = {}
-
+sql_message = XiuxianDateManage()  # sql类
 
 cdmsg = [
     '你急啥呢？{cd_msg}后再来吧',
@@ -18,6 +19,7 @@ cdmsg = [
     
 ]
 
+@snoop
 def check_cd(event: MessageEvent, cdtype: str) -> int:
     """
     :说明: `check_cd`
@@ -30,7 +32,12 @@ def check_cd(event: MessageEvent, cdtype: str) -> int:
     :返回:
       - `int`: 剩余时间
     """
-    uid = event.get_user_id()
+    if isinstance(event, GuildMessageEvent):
+        tiny_id = event.get_user_id()
+        user_info = sql_message.get_user_message3(tiny_id)
+        uid = int(user_info.user_id)
+    else:
+        uid = int(event.get_user_id())
     # cd = 设置的到期时间 - 当前时间
     try:
         cd: int = cd_data[uid][cdtype] - event.time
@@ -42,7 +49,7 @@ def check_cd(event: MessageEvent, cdtype: str) -> int:
     else:
         return cd
     
-    
+@snoop    
 def add_cd(event: MessageEvent, config_time, cdtype, times: int = 1):
     """
     :说明: `add_cd`
@@ -51,15 +58,21 @@ def add_cd(event: MessageEvent, config_time, cdtype, times: int = 1):
       * `event: MessageEvent`: 事件
       * `times: int`: 倍数, 默认为 `1`
     """
+    if isinstance(event, GuildMessageEvent):
+        tiny_id = event.get_user_id()
+        user_info = sql_message.get_user_message3(tiny_id)
+        user_id = int(user_info.user_id)
+    else:
+        user_id = int(event.get_user_id())
     try:
-        cd_data[event.get_user_id()]
+        cd_data[user_id]
     except:
-        cd_data[event.get_user_id()] = {}
+        cd_data[user_id] = {}
     
-    cd_data[event.get_user_id()][cdtype] = event.time + times * config_time
+    cd_data[user_id][cdtype] = event.time + times * config_time
     logger.debug("查询CD: {}".format(cd_data))
     
-    
+@snoop    
 def cd_msg(time_last) -> str:
     """获取CD提示信息"""
     hours, minutes, seconds = 0, 0, 0

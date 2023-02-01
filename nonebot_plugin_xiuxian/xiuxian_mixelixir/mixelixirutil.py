@@ -1,3 +1,4 @@
+from random import shuffle
 from ..item_json import Items
 import json
 import os
@@ -8,10 +9,6 @@ mix_config = Items().get_data_by_item_type(['合成丹药'])
 mix_configs = {}
 for k, v in mix_config.items():
     mix_configs[k] = v['elixir_config']
-
-
-
-
 
 
 yonhudenji = 0
@@ -171,3 +168,13 @@ def savef(data):
         f.write(data)
         f.close
     return True
+
+async def make_dict(old_dict):
+    old_dict_key = list(old_dict.keys())
+    shuffle(old_dict_key)
+    if len(old_dict_key) >= 25:
+        old_dict_key = old_dict_key[:25]
+    new_dic = {}
+    for key in old_dict_key:
+        new_dic[key] = old_dict.get(key)
+    return new_dic
