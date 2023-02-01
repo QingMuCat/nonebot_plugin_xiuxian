@@ -384,6 +384,13 @@ async def _(bot: Bot, event: MessageEvent, args: Message = CommandArg()):
         else:
             await choujiang.finish(f"@{event.sender.nickname}\n" + msg, at_sender=True)
 
+            
+async def get_group_id(session_id):
+    """获取group_id"""
+
+    res = re.findall("_(.*)_", session_id)
+    group_id = int(res[0])
+    return group_id
 
 
 async def data_check(bot, event):
