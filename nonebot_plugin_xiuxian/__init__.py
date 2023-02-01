@@ -103,7 +103,7 @@ async def _(bot: Bot, event: GuildMessageEvent, args: Message = CommandArg()) ->
 @command.run_xiuxian.handle()
 async def _(bot: Bot, event: MessageEvent, args: Message = CommandArg()) -> None:
     """加入修仙"""
-    msg = "修真系统:\n"
+    #msg = "修真系统:\n"
     user_name = (
             event.sender.card if event.sender.card else event.sender.nickname
         )  # 获取为用户名

@@ -46,6 +46,7 @@ def check_user_type(user_id, need_type):
             msg = "道友现在什么都没干呢~"
 
     return isType, msg
+    
 
 def check_user(event: MessageEvent):
     """

@@ -74,7 +74,7 @@ async def _(bot: Bot, event: MessageEvent, args: Message = CommandArg()):
     ls_yc_10 = 1400000
 
     if arg == "帮助":
-        msg = "※---------修仙祈愿---------※\n法器：\n100w灵石1连\n900w灵石10连\n\n防具：\n110w灵石1连\n1000w灵石10连\n\n神通：\n120w灵石1连\n1100w灵石10连\n\n功法：\n120w灵石1连\n1100w灵石10连\n\n丹药：\n300w灵石1连\n2800w灵石10连\n\n合成丹药：\n500w灵石1连\n4700w灵石10连\n\n药材：\n150w灵石1连\n1400w灵石10连\n"
+        msg = "※---------修仙祈愿---------※\n法器：\n1w6000枚灵石1连\n16w枚灵石10连\n\n防具：\n11w枚灵石1连\n100w枚灵石10连\n\n神通：\n12w枚灵石1连\n110w枚灵石10连\n\n功法：\n12w枚灵石1连\n110枚w灵石10连\n\n丹药：\n30w枚灵石1连\n280w枚灵石10连\n\n合成丹药：\n50w枚灵石1连\n470w枚灵石10连\n\n药材：\n15w枚灵石1连\n140w枚灵石10连\n"
         if XiuConfig().img:
             pic = await get_msg_pic(f"@{event.sender.nickname}\n" + msg)
             await choujiang.finish(MessageSegment.image(pic), at_sender=True)
@@ -385,6 +385,11 @@ async def _(bot: Bot, event: MessageEvent, args: Message = CommandArg()):
             await choujiang.finish(f"@{event.sender.nickname}\n" + msg, at_sender=True)
 
 
+async def get_group_id(session_id):
+    """获取group_id"""
+    res = re.findall("_(.*)_", session_id)
+    group_id = int(res[0])
+    return group_id
 
 async def data_check(bot, event):
     """
@@ -409,6 +414,7 @@ async def data_check(bot, event):
         else:
             await bot.send(event=event, message=f"没有您的QQ绑定信息，输入【绑定QQ+QQ号码】进行绑定后再输入【我要修仙】加入！")
             raise MsgError
+
 
     return user_qq, group_id, msg
 
