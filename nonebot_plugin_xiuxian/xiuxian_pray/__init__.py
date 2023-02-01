@@ -68,7 +68,7 @@ async def _(bot: Bot, event: GroupMessageEvent|GuildMessageEvent, args: Message 
     ls_yc = 1500000
     ls_yc_10 = 14000000
 
-    if arg == "帮助":
+    if arg == "修仙祈愿帮助":
         msg = "※---------修仙祈愿---------※\n法器：\n100w灵石1连\n900w灵石10连\n\n防具：\n110w灵石1连\n1000w灵石10连\n\n神通：\n120w灵石1连\n1100w灵石10连\n\n功法：\n120w灵石1连\n1100w灵石10连\n\n丹药：\n300w灵石1连\n2800w灵石10连\n\n合成丹药：\n500w灵石1连\n4700w灵石10连\n\n药材：\n150w灵石1连\n1400w灵石10连\n"
         if XiuConfig().img:
             pic = await get_msg_pic(f"@{event.sender.nickname}\n" + msg)
