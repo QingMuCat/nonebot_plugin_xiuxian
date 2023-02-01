@@ -150,6 +150,7 @@ async def _(bot: Bot, event: MessageEvent, args: Message = CommandArg()) -> None
         await run_xiuxian.finish(msg)
 
 
+
 @sign_in.handle()
 async def _(bot: Bot, event: MessageEvent):
     """修仙签到"""

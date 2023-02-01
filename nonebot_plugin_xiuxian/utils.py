@@ -13,7 +13,7 @@ import re
 from nonebot_plugin_guild_patch import GuildMessageEvent
 from .data_source import jsondata
 from .xiuxian_config import JsonConfig
-
+import snoop
 def check_user_type(user_id, need_type):
     """
     :说明: `check_user_type`
@@ -46,8 +46,8 @@ def check_user_type(user_id, need_type):
             msg = "道友现在什么都没干呢~"
 
     return isType, msg
-    
 
+@snoop()
 def check_user(event: MessageEvent):
     """
     判断用户信息是否存在
@@ -76,6 +76,7 @@ def check_user(event: MessageEvent):
             msg = ''
     
     return isUser, user_info, msg
+
 
 async def send_forward_msg(
     bot: Bot,

@@ -38,7 +38,12 @@ git clone https://ghproxy.com/https://github.com/QingMuCat/nonebot_plugin_xiuxia
 
 使用git clone后，进入插件目录，把data文件夹中的全部内容移动到bot的数据文件夹中<br>
 
-3、安装频道补丁：
+3、安装频道补丁与依赖：
+
+```
+依赖：
+pip install snoop -i https://pypi.tuna.tsinghua.edu.cn/simple/
+```
 
 ```
 频道补丁
