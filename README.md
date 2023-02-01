@@ -5,6 +5,7 @@ _:tada::tada::tada:修仙模拟器！:tada::tada::tada:_
 ## 简介
 
 本插件主要为实现群聊修仙功能,最近经常封号，请自行判断后再使用，已默认转成图片模式，如需关闭，可在config.py处调整img字段为false
+并适配了频道与群聊数据互通
 
 ## 设定征集中，有好的想法可以推送给我哦~~~
 
@@ -23,32 +24,25 @@ _:tada::tada::tada:修仙模拟器！:tada::tada::tada:_
 ## 安装
 1、下载插件文件
 
-- 使用脚手架安装(推荐github处拉取源码使用)
-
-
-```
-pip install nonebot-plugin-xiuxian
-nb plugin install nonebot-plugin-xiuxian
-```
-
 - 使用github处拉取源码使用
-
+无镜像：
 ```
 git clone https://github.com/s52047qwas/nonebot_plugin_xiuxian.git
+```
+镜像：https://ghproxy.com/
+```
+git clone https://ghproxy.com/https://github.com/s52047qwas/nonebot_plugin_xiuxian.git
 ```
 
 2、下载数据文件
 
-使用git clone的方法的，进入插件目录，把data文件夹中的全部内容移动到bot的数据文件夹中<br>
-使用pip的，在GitHub处下载data文件夹，把data文件夹中的全部内容移动到bot的数据文件夹中<br>
-bot的数据文件夹一般为bot.py同级目录下的data文件夹
+使用git clone后，进入插件目录，把data文件夹中的全部内容移动到bot的数据文件夹中<br>
 
-3、加载插件
-
-- 然后在bot.py文件中添加
+3、安装频道补丁：
 
 ```
-nonebot.load_plugin('nonebot_plugin_xiuxian')
+频道补丁
+pip install nonebot_plugin_guild_patch -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
 
 4、如果遇到问题，请先百度和查看下方的 【一些问题】
@@ -60,14 +54,7 @@ nonebot.load_plugin('nonebot_plugin_xiuxian')
 2、子插件的配置会在插件运行后在子插件文件中生成config.json文件，该文件字段含义在同级目录的xxxconfig.py有备注。注意：修改配置只需要修改json即可，修改.py文件的话需要删除json文件才会生效，任何修改都需要重启bot
 
 ## 更新
-- 使用脚手架安装的
-```
-pip install nonebot-plugin-xiuxian -U
-```
-```
-pip install nonebot-plugin-xiuxian --upgrade
-```
-- 使用github处拉取源码使用的
+使用github处拉取源码使用的
 进入插件目录执行命令：
 ```
 git pull
@@ -102,7 +89,7 @@ git pull
 
 大家喜欢的话可以给这个项目点个star
 
-有bug、意见和建议都欢迎提交 [Issues](https://github.com/s52047qwas/nonebot_plugin_xiuxian/issues) 
+有bug、意见和建议都欢迎提交 [Issues](https://github.com/QingMuCat/nonebot_plugin_xiuxian/issues) 
 或者联系进入QQ交流群：760517008
 
 ## 许可证
