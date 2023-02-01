@@ -9,8 +9,11 @@ from nonebot.adapters.onebot.v11 import (
 )
 
 from nonebot_plugin_guild_patch import (
-    MessageSegment,
-    GuildMessageEvent,
+    GUILD,
+    GUILD_OWNER,
+    GUILD_ADMIN,
+    GUILD_SUPERUSER,
+    GuildMessageEvent
 )
 
 from ..utils import data_check_conf, get_msg_pic, check_user
@@ -33,7 +36,7 @@ def get_random_id(dict_data):
     return random.choice(l_temp)
 
 @choujiang.handle()
-async def _(bot: Bot, event: GroupMessageEvent | GuildMessageEvent, args: Message = CommandArg()):
+async def _(bot: Bot, event: GroupMessageEvent|GuildMessageEvent, args: Message = CommandArg()):
     """抽奖机制"""
     await data_check_conf(bot, event)
 
