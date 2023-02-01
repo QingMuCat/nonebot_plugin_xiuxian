@@ -36,7 +36,7 @@ def get_random_id(dict_data):
     return random.choice(l_temp)
 
 @choujiang.handle()
-async def _(bot: Bot, event: GroupMessageEvent|GuildMessageEvent, args: Message = CommandArg()):
+async def _(bot: Bot, event: MessageEvent, args: Message = CommandArg()):
     """抽奖机制"""
     await data_check_conf(bot, event)
 
