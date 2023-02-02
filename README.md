@@ -63,10 +63,10 @@ git pull
 
 ## 群聊与频道部分功能展示
 
-![image](https://www.helloimg.com/image/oZlZav)
-![image](https://www.helloimg.com/image/oZlFDY)
-![image](https://www.helloimg.com/image/oZlaG9)
-![image](https://www.helloimg.com/image/oZlobE)
+![image](https://raw.githubusercontent.com/QingMuCat/qm/master/xiuxian/%E7%BE%A4%E8%81%8A%E7%B4%A0%E6%9D%901.png)
+![image](https://raw.githubusercontent.com/QingMuCat/qm/master/xiuxian/%E7%BE%A4%E8%81%8A%E7%B4%A0%E6%9D%902.png)
+![image](https://raw.githubusercontent.com/QingMuCat/qm/master/xiuxian/%E9%A2%91%E9%81%93%E7%B4%A0%E6%9D%901.png)
+![image](https://raw.githubusercontent.com/QingMuCat/qm/master/xiuxian/%E9%A2%91%E9%81%93%E7%B4%A0%E6%9D%902.png)
 ## 一些问题
 
 - 当前首次使用，未自动创建json文件及sql文件，请在[github](https://github.com/s52047qwas/nonebot_plugin_xiuxian)处，目录data -> xiuxian
