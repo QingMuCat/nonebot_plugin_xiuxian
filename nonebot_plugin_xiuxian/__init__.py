@@ -63,7 +63,6 @@ load_all_plugins(
         [],
     )
 
-
 @command.qq_binding.handle()
 async def _(bot: Bot, event: GuildMessageEvent, args: Message = CommandArg()) -> None:
     """频道tiny_id与user_id绑定"""
