@@ -61,14 +61,12 @@ git pull
 ```
 
 
-## 功能展示
+## 群聊与频道部分功能展示
 
-- 使用 `/我要修仙` 指令触发机器人，机器人创建用户信息，生成灵根，境界等信息。
-- 发送突破，当修为足够时，可突破境界。
-- 发送修仙签到，获取每日初始化的灵石及修为。
-
-![image](https://user-images.githubusercontent.com/44226600/187607785-3ea934f4-2b5c-418e-9b99-e8a8e5562125.png)
-
+![image](https://www.helloimg.com/image/oZlZav)
+![image](https://www.helloimg.com/image/oZlFDY)
+![image](https://www.helloimg.com/image/oZlaG9)
+![image](https://www.helloimg.com/image/oZlobE)
 ## 一些问题
 
 - 当前首次使用，未自动创建json文件及sql文件，请在[github](https://github.com/s52047qwas/nonebot_plugin_xiuxian)处，目录data -> xiuxian
